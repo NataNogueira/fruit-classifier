@@ -5,7 +5,7 @@ KAGGLE_KEY = ""
 
 DATASET = "icebearogo/fruit-classification-dataset"
 DEST = "data"
-ZIP_PATH = os.path.join(DEST, "dataset.zip")
+ZIP_PATH = os.path.join(DEST, "fruit-classification-dataset.zip")
 CSV_DIR = os.path.join(DEST, "csv")
 RAW_DIR = os.path.join(DEST, "raw")
 
