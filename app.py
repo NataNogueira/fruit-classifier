@@ -1,8 +1,8 @@
 import streamlit as st
-from services.model_loader import load_model
-from components.uploader import image_uploader
-from components.predict_result import show_result
-from utils.state_manager import initialize_session_state
+from frontend.services.model_loader import load_model
+from frontend.components.uploader import image_uploader
+from frontend.components.predict_result import show_result
+from frontend.utils.state_manager import initialize_session_state
 
 st.set_page_config(page_title="ML Image Analyzer", layout="centered")
 
