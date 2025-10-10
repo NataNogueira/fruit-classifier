@@ -1,19 +1,19 @@
 import os
 import zipfile
 import shutil
-from kaggle.api.kaggle_api_extended import KaggleApi
+import requests
 from config import config
 
-# Autentica e baixa o dataset
-api = KaggleApi()
-api._load_config({
-    'username':config.KAGGLE_USERNAME,
-    'key':config.KAGGLE_KEY
-})
- 
-api.authenticate()
+
 os.makedirs(config.DEST, exist_ok=True)
-api.dataset_download_files(config.DATASET, path=config.DEST, unzip=False)
+print("Baixando dataset...")
+response = requests.get(config.DATASET_URL, stream=True)
+response.raise_for_status()
+
+with open(config.ZIP_PATH, 'wb') as f:
+    for chunk in response.iter_content(chunk_size=8192):
+        f.write(chunk)
+print("Download concluído!")
 
 # Extrai para pasta temporária
 TEMP = os.path.join(config.DEST, "temp")
