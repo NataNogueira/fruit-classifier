@@ -1,14 +1,11 @@
 import os
 
-KAGGLE_USERNAME = ""
-KAGGLE_KEY = ""
-
 DATASET = "icebearogo/fruit-classification-dataset"
 DEST = "data"
 ZIP_PATH = os.path.join(DEST, "fruit-classification-dataset.zip")
 CSV_DIR = os.path.join(DEST, "csv")
 RAW_DIR = os.path.join(DEST, "raw")
-
+DATASET_URL = "https://www.kaggle.com/api/v1/datasets/download/icebearogo/fruit-classification-dataset"
 TRAIN_DIR = os.path.join(RAW_DIR, "train1")
 VAL_DIR = os.path.join(RAW_DIR, "val1")
 TEST_DIR = os.path.join(RAW_DIR, "test1")
