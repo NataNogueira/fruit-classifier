@@ -1,7 +1,7 @@
-import os 
+import os
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.optimizers import Adam
-from model import FruitModel
+from .model import FruitModel
 from config import config
 
 # Pré-processamento dos dados
