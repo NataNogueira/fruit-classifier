@@ -1,5 +1,5 @@
 import streamlit as st
-from frontend.services.model_loader import load_model
+from frontend.services.model_loader import load_trained_model
 from frontend.components.uploader import image_uploader
 from frontend.components.predict_result import show_result
 from frontend.utils.state_manager import initialize_session_state
@@ -12,7 +12,7 @@ st.title("Machine Learning Image Analyzer")
 initialize_session_state()
 
 # Carregar modelo treinado (ex: .h5, .pkl etc)
-model = load_model()
+model = load_trained_model()
 
 # Upload da imagem
 uploaded_image = image_uploader()
