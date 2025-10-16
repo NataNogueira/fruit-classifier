@@ -19,7 +19,9 @@ train_gen = ImageDataGenerator(
     config.TRAIN_DIR,
     target_size=config.IMG_SIZE,
     batch_size=config.BATCH_SIZE,
-    class_mode='categorical'
+    class_mode='categorical',
+    classes=config.TEST_CLASSES,
+    shuffle=True
 )
 
 val_gen = ImageDataGenerator(
@@ -28,7 +30,8 @@ val_gen = ImageDataGenerator(
     config.VAL_DIR,
     target_size=config.IMG_SIZE,
     batch_size=config.BATCH_SIZE,
-    class_mode='categorical'
+    class_mode='categorical',
+    classes=config.TEST_CLASSES,
 )
 
 
@@ -90,4 +93,4 @@ history_ft = model.fit(
 
 save_path = MODEL_PATH.replace(".h5", ".keras")
 model.save(save_path)
-print(f"✅ Modelo salvo com sucesso em: {save_path}")
+print(f"Modelo salvo com sucesso em: {save_path}")
