@@ -3,7 +3,7 @@ from tensorflow.keras.models import load_model
 from config.model_path import MODEL_PATH
 
 @st.cache_resource
-def load_model():
+def load_trained_model():
     try:
         model = load_model(MODEL_PATH)
         st.success("✅ Modelo carregado com sucesso!")
